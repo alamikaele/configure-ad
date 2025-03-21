@@ -1,3 +1,6 @@
+<h1>Note: This lab is in progress. Images are not up to date! </h1>
+
+<br />
 <p align="center">
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
@@ -23,8 +26,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Creating Client-1 in Microsoft Azure
 - Test Connectivity of Client to DC-1
 - Install Active Directory
-- Create Domain Admin User and Other Users in Domain
-- Setup RDP for Non-Admin users on Client 1
+- Create Domain User within the domain
+- Join Client-1 to domain
+- Setup Remote Desktop for non-administrative users on Client-1
+- Create a bunch of additional users and attempt to log into client-1 with one of the users
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -126,6 +131,17 @@ Ping DC-1's private IP address after logging in to Client-1
 
 <p align="center">
 Open PowerShell and run "ipconfig /all". Look for DNS Settings and it should have DC-1's Private IP address
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<h3 align="center">Install Active Directory</h3>
+
+<p align="center">
+Login to DC-1 and Install Active Directory Domain Services
 </p>
 <br/>
 <p>
