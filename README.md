@@ -26,9 +26,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Creating Client-1 in Microsoft Azure
 - Test Connectivity of Client to DC-1
 - Install Active Directory
-- Create Domain User within the domain
-- Join Client-1 to domain
-- Setup Remote Desktop for non-administrative users on Client-1
+- Create Domain Admin User Within the Domain
+- Join Client-1 to Domain
+- Setup Remote Desktop For Non-Administrative Users On Client-1
 - Create a bunch of additional users and attempt to log into client-1 with one of the users
 
 <h2>Deployment and Configuration Steps</h2>
@@ -149,5 +149,132 @@ Login to DC-1 and Install Active Directory Domain Services
 </p>
 <br/>
 
+<p align="center">
+Promote as a domain controller and set up new forest as whatever you want (ex: mydomain.com). Restart and log back into DC-1 as user: my
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
 
+<p align="center">
+Restart and log back into DC-1 as user: mydomain.com/labuser
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<h3 align="center">Create Domain Admin User Within the Domain</h3>
+
+<p align="center">
+In Active Directory User and Computers (ADUC), create Organizational Unit (OU) called “_EMPLOYEES” and another OU called "_ADMINS"
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Create new employee named "Jane Doe" with same password. Username "jane_admin" / whatever password you want. Add "jane_admin" to the "Domain Admins" Security Group.
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Log out and close connection to DC-1. Log back in as "mydomain.com/jane_admin". Use jane_admin as your admin account from now on
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<h3 align="center">Join Client-1 to Your Domain</h3>
+
+<p align="center">
+Login to Client-1 as the original local admin (labuser) and join it to the domain (computer will restart)
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Login to the Domain Controller and verify Client-1 shows up in ADUC. Then create a new OU named “_CLIENTS” and drag Client-1 into there
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<h3 align="center">Setup Remote Desktop For Non-Administrative Users On Client-1</h3>
+
+<p align="center">
+Log into Client-1 as mydomain.com/jane_admin > open system properties > Remote Desktop > Allow "domain users" acces to remote desktop.
+</p>
+<p align="center">
+You can now log into Client-1 as a normal, non-administrative user now
+Normally you’d want to do this with Group Policy that allows you to change MANY systems at once (maybe a future lab)
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<h3 align="center">Create a bunch of additional users and attempt to log into client-1 with one of the users
+</h3>
+
+<p align="center">
+Login to DC-1 as jane_admin and open PowerShell_ise as an administrator
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Create a new File and paste the contents of the script into it then run the script and observe the accounts being created.
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Attempt to log into Client-1 with one of the accounts (take note of the password in the script)
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+<br/>
+
+<p>This tutorial was a walkthrough on active directory. How to set it up with Microsoft Azure and what it looks like to 
+  set permissions and such. 
+</p>
+
+<p> END OF TUTORIAL
+</p>
 
