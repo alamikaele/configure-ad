@@ -20,8 +20,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>High-Level Deployment and Configuration Steps</h2>
 
 - Create Resources To Start
-- Create domain Controller VM
-- Login and Disable Windows Firewall
+- Creating Client-1 in Microsoft Azure
+- Test Connectivity of Client to DC-1
+- Install Active Directory
+- Create Domain Admin User and Other Users in Domain
+- Setup RDP for Non-Admin users on Client 1
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -46,8 +49,8 @@ Create Virtual Network on Microsoft Azure
 <br/>
 
 <p align="center">
-<h4 align="center">Creating First Virtual Machine </h4>
-Create Virtual Machine on Microsoft Azure and name it "dc-1". Make sure to put it in the resource group we just created. Image: Windows Server 2022. Size: anything with 2 virtual cpus. username: make it and save it in a txt file (notepad/textedit). password: no password
+<h4 align="center">Creating Domain Controller Virtual Machine (VM) </h4>
+Create Virtual Machine on Microsoft Azure and name it "dc-1". Make sure to put it in the resource group and virtual network we just created. Image: Windows Server 2022. Size: anything with 2 virtual cpus. username: make it and save it in a txt file (notepad/textedit). password: no password
 </p>
 <br/>
 <p>
@@ -55,7 +58,7 @@ Create Virtual Machine on Microsoft Azure and name it "dc-1". Make sure to put i
 </p>
 
 <p align="center">
-Under Networking tab (when creating virtual machine), put it in the virtual network we just made. Click review + create
+Log into VM and disable Windows Firewall. This tests connectivity
 </p>
 <br/>
 <p>
@@ -63,7 +66,17 @@ Under Networking tab (when creating virtual machine), put it in the virtual netw
 </p>
 <br/>
 
-<h4 align="center">Creating Second Virtual Machine </h4>
+<p align="center">
+Set Domain Controller's NIC Private IP address to be static
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+
+<h3 align="center">Creating Client-1 in Microsoft Azure </h3>
 <p align="center">
 Create second virtual machine. Subscription: Pay-as-you-go. Same resource group as the first virtual machine. Name: "client-1". Image: Windows 10 Pro, version 22H2. Size: anything at least 2 vcpus. Username and passwords: username same as first vm but add password and save to txt file. Go to networking tab  
 </p>
@@ -83,7 +96,7 @@ Go to networking tab. Virtual network: same as one we created and put first vm i
 <br/>
 
 <p align="center">
-Set Domain Controller's NIC Private IP address to be static
+Set Client-1 DNS settings to DC-1's private IP address
 </p>
 <br/>
 <p>
@@ -92,10 +105,33 @@ Set Domain Controller's NIC Private IP address to be static
 <br/>
 
 <p align="center">
-Log into VM and disable Windows Firewall. This tests connectivity
+Restart Client-1 from Azure portal
 </p>
 <br/>
 <p>
 <img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
+
+<h3 align="center">Test Connectivity of Client to DC-1</h3>
+
+<p align="center">
+Ping DC-1's private IP address after logging in to Client-1
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Open PowerShell and run "ipconfig /all". Look for DNS Settings and it should have DC-1's Private IP address
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+
+
