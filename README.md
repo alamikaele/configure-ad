@@ -120,7 +120,7 @@ Open PowerShell and run "ipconfig /all". Look for DNS Settings and it should hav
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/W7TdQ5c.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
