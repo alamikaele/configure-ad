@@ -22,9 +22,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Create Resources To Start
-- Creating Client-1 in Microsoft Azure
-- Test Connectivity of Client to DC-1
+- Setup Domain Controller in Azure
+- Setup Client-1 in Azure
 - Install Active Directory
 - Create Domain Admin User Within the Domain
 - Join Client-1 to Domain
@@ -33,70 +32,59 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
-<h3 align="center"> Create Resources To Start </h3>
+<h3 align="center"> Setup Domain Controller in Azure </h3>
 
 <p align="center">
-Create Resource Group on Microsoft Azure
+Create Resource Group on Microsoft Azure:
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-<br/>
-
-<p align="center">
-Create Virtual Network on Microsoft Azure
-</p>
-<br/>
-<p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/mMOCPkK.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
 <p align="center">
-<h4 align="center">Creating Domain Controller Virtual Machine (VM) </h4>
-Create Virtual Machine on Microsoft Azure and name it "dc-1". Make sure to put it in the resource group and virtual network we just created. Image: Windows Server 2022. Size: anything with 2 virtual cpus. username: make it and save it in a txt file (notepad/textedit). password: no password
+Create Virtual Network on Microsoft Azure:
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
-</p>
-
-<p align="center">
-Log into VM and disable Windows Firewall. This tests connectivity
-</p>
-<br/>
-<p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/qtb5sdU.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
 <p align="center">
-Set Domain Controller's NIC Private IP address to be static
+Create Virtual Machine on Microsoft Azure and name it "dc-1". Make sure to put it in the resource group and virtual network we just created. Image: Windows Server 2022. Size: anything with 2 virtual cpus. username: make it and save it in a txt file (notepad/textedit). password: make it and save it in a txt file:
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/phMMme6.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
-<br/>
 
-
-<h3 align="center">Creating Client-1 in Microsoft Azure </h3>
+<h3 align="center">Setup Client-1 in Azure </h3>
 <p align="center">
-Create second virtual machine. Subscription: Pay-as-you-go. Same resource group as the first virtual machine. Name: "client-1". Image: Windows 10 Pro, version 22H2. Size: anything at least 2 vcpus. Username and passwords: username same as first vm but add password and save to txt file. Go to networking tab  
+Create second virtual machine. Subscription: Pay-as-you-go. Same resource group as the first virtual machine. Name: "client-1". Image: Windows 10 Pro, version 22H2. Size: anything at least 2 vcpus. Username and passwords: username same as first vm but add password and save to txt file. Go to networking tab > Virtual Network: the virtual network we created and put dc-1 vm in:
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/KTmZMrC.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
 <p align="center">
-Go to networking tab. Virtual network: same as one we created and put first vm in. Review + create
+Set Domain Controller's NIC Private IP address to be static:
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/EWw7Ijg.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Log into dc-1 VM and disable Windows Firewall. This tests connectivity. Disable under domain and private profile tabs. Under public profile > inbound connections: allow inbound connections.
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/1re9WP7.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -105,7 +93,7 @@ Set Client-1 DNS settings to DC-1's private IP address
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/3EY8Ir1.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -118,14 +106,12 @@ Restart Client-1 from Azure portal
 </p>
 <br/>
 
-<h3 align="center">Test Connectivity of Client to DC-1</h3>
-
 <p align="center">
 Ping DC-1's private IP address after logging in to Client-1
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/WeLgmm8.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
