@@ -6,7 +6,7 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
+This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines. You will create a Domain Controller to be the networks DNS server and a client in which you can practice adding users and rules as you would in a real world environment.<br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -131,16 +131,16 @@ Login to DC-1 and Install Active Directory Domain Services
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/oKDiLAy.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
 <p align="center">
-Promote as a domain controller and set up new forest as whatever you want (ex: mydomain.com). Restart and log back into DC-1 as user: my
+Promote as a domain controller and set up new forest as whatever you want (ex: mydomain.com). Restart and log back into DC-1 as user: mydomain.com\labuser
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ziFtjOA.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -149,7 +149,7 @@ Restart and log back into DC-1 as user: mydomain.com/labuser
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/L86caXO.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -160,7 +160,7 @@ In Active Directory User and Computers (ADUC), create Organizational Unit (OU) c
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ZwVF5wA.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -169,7 +169,16 @@ Create new employee named "Jane Doe" with same password. Username "jane_admin" /
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/gWPeZ84.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<br/>
+
+<p align="center">
+Add jane_admin to the “Domain Admins” Security Group. 
+</p>
+<br/>
+<p>
+<img src="https://i.imgur.com/DAq1mgj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -178,7 +187,7 @@ Log out and close connection to DC-1. Log back in as "mydomain.com/jane_admin". 
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/bHnETUb.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
