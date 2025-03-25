@@ -198,7 +198,7 @@ Login to Client-1 as the original local admin (labuser) and join it to the domai
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/Pq4rnSO.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -207,14 +207,17 @@ Login to the Domain Controller and verify Client-1 shows up in ADUC. Then create
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/iPU9uEL.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/WwFhfUb.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
 <h3 align="center">Setup Remote Desktop For Non-Administrative Users On Client-1</h3>
 
 <p align="center">
-Log into Client-1 as mydomain.com/jane_admin > open system properties > Remote Desktop > Allow "domain users" acces to remote desktop.
+Log into Client-1 as mydomain.com/jane_admin > open system properties > Remote Desktop > Allow "domain users" access to remote desktop.
 </p>
 <p align="center">
 You can now log into Client-1 as a normal, non-administrative user now
@@ -222,7 +225,7 @@ Normally you’d want to do this with Group Policy that allows you to change MAN
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/pvEz2Mi.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -234,7 +237,7 @@ Login to DC-1 as jane_admin and open PowerShell_ise as an administrator
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/1MsJ0l1.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
@@ -243,16 +246,19 @@ Create a new File and paste the contents of the script into it then run the scri
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/gSHTyVx.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/EDKrtiV.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
 <p align="center">
-Open ADUC and observe the accounts in the appropriate OU　(_EMPLOYEES)
+Open ADUC and observe the accounts in the appropriate OU (_EMPLOYEES)
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/X5dqW6T.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 
