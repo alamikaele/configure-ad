@@ -238,8 +238,7 @@ Login to DC-1 as jane_admin and open PowerShell_ise as an administrator
 </p>
 <br/>
 
-<p align="center">
-Create a new File and paste the contents of the script into it then run the script and observe the accounts being created.
+<p align="center"> Create a new File and paste the contents of the <a href="https://drive.google.com/uc export=download&id=1b3RBkXTLNGXbibeMuAynkfzdBC1NnqaD" target="_blank"> script </a> into it then run the script and observe the accounts being created.
 </p>
 <br/>
 <p>
