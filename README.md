@@ -1,6 +1,3 @@
-<h1>Note: This lab is in progress. Images are not up to date! </h1>
-
-<br />
 <p align="center">
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
@@ -267,13 +264,12 @@ Attempt to log into Client-1 with one of the accounts (take note of the password
 </p>
 <br/>
 <p>
-<img src="https://i.imgur.com/4tSKQkj.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/zUqUZ1I.png" height="75%" width="100%" alt="Disk Sanitization Steps"/>
 </p>
 <br/>
 <br/>
 
-<p>This tutorial was a walkthrough on active directory. How to set it up with Microsoft Azure and what it looks like to 
-  set permissions and such. 
+<p>This tutorial was a walkthrough on active directory. We have a domain controller which is our Domain Name Server (DNS). We made a lot of random users as well as the admin which we made to be Jane Doe. 
 </p>
 
 <p> END OF TUTORIAL
